@@ -5,7 +5,6 @@ const categorySchema = new mongoose.Schema({
         required: [true, "Category name is a required field"],
         trim: true,
         unique: true,
-        enum: ['kids', 'women', 'men']
     },
     description:{
         type: String,
