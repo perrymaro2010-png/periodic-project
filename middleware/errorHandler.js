@@ -1,7 +1,16 @@
 const AppError = require('../utils/AppError');
 
 const errorHandler = (err, req, res, next) => {
-    if(err.name == 'CastError' && err.kind === "ObjectId") err = new AppError('Invalid ObjectId', 400);
+    if(err.name == 'CastError')
+        if(err.kind === 'ObjectId'){
+            err = new AppError('Invalid ObjectId', 400);
+        } else if (err.kind === 'Number'){
+            err = new AppError('Must be a Number', 400);
+        } else if (err.kind === 'String'){
+            err = new AppError('Must be a String', 400);
+        } else {
+            err = new AppError('Invalid Data Type', 400);
+        }
     if(err.name == 'ValidationError'){
         const message = Object.values(err.errors)
             .map(e => e.message)
