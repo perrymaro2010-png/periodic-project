@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const connectDB = require('./config/connect');
 const Category = require('./models/categoryModel');
 const Product = require('./models/productModel');
-const Order = require('./models/orderModel');
 
 const categories = [
         {
@@ -54,9 +53,7 @@ const seed = async ()=>{
                 inStock: true,
                 category: men._id
             }];
-
         await Product.insertMany(products);
-        await Category.insertMany(categories);
         await mongoose.disconnect();
         process.exit(0);
     } catch (err) {
