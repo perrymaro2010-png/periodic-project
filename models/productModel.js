@@ -16,7 +16,7 @@ const productSchema = new mongoose.Schema({
     },
     inStock:{
         type: Boolean,
-        required: [true, "Stock value is a required field"]
+        required: [true, "Stock boolean value is a required field"]
     },
     category:{
         type: mongoose.Schema.Types.ObjectId,
