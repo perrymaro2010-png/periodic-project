@@ -1,3 +1,5 @@
+const AppError = require('../utils/AppError');
+
 const errorHandler = (err, req, res, next) => {
     if(err.name == 'CastError') err = new AppError('Invalid ObjectId', 400);
     if(err.name == 'ValidationError'){
