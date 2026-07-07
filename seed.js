@@ -19,12 +19,9 @@ const categories = [
             description: 'Clothing for men'
         }
     ];
-const kids = categories.find(c => c.name === 'kids');
-const women = categories.find(c => c.name === 'women'); 
-const men = categories.find(c => c.name === 'men');
 
 const seed = async ()=>{
-    
+
     try {
         await connectDB();
         await Product.deleteMany({});
@@ -41,21 +38,21 @@ const seed = async ()=>{
                 price: 100,
                 stock: 52,
                 inStock: true,
-                category: kids[0]._id
+                category: kids._id
             },
             {
                 name: 'Thong Pants',
                 price: 240,
                 stock: 13,
                 inStock: true,
-                category: women[0]._id
+                category: women._id
             },
             {
                 name: 'Teal Blazer',
                 price: 310,
                 stock: 19,
                 inStock: true,
-                category: men[0]._id
+                category: men._id
             }];
 
         await Product.insertMany(products);
