@@ -22,11 +22,12 @@ const addProduct = asyncHandler(async(req, res)=>{
         item.product.equals(product)
     );
     if(existingItem) {
-        if(existingItem.quantity + quantity > productDoc.stock) 
+        if(existingItem.quantity + quantity > productDoc.stock){
             throw new AppError('Not Enough Items in Stock', 400);
-        existingItem.quantity += quantity;
+            existingItem.quantity += quantity;
+        }
     } else {
-        if(quantity > productDoc.inStock)
+        if(quantity > productDoc.stock)
             throw new AppError('Not Enough Items in Stock', 400);
         cart.items.push({
         product,
