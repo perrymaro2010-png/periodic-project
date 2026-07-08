@@ -57,6 +57,7 @@ const seed = async ()=>{
         await mongoose.disconnect();
         process.exit(0);
     } catch (err) {
+        throw new AppError(err.message, 400);
         await mongoose.disconnect();
         process.exit(1);
     }
