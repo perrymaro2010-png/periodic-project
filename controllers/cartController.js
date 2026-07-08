@@ -24,8 +24,8 @@ const addProduct = asyncHandler(async(req, res)=>{
     if(existingItem) {
         if(existingItem.quantity + quantity > productDoc.stock){
             throw new AppError('Not Enough Items in Stock', 400);
-            existingItem.quantity += quantity;
         }
+        quantity += existingItem.quantity;
     } else {
         if(quantity > productDoc.stock)
             throw new AppError('Not Enough Items in Stock', 400);
@@ -33,7 +33,7 @@ const addProduct = asyncHandler(async(req, res)=>{
         product,
         quantity
     });
-    }     
+    }
     cart.totalPrice += productDoc.price * quantity;
     await cart.save();
     ok(res, cart, 'Product Added Successfully');
