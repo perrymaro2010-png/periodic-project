@@ -40,7 +40,7 @@ const seed = async ()=>{
                 category: kids._id
             },
             {
-                name: 'Thong Pants',
+                name: 'Long Black Pants',
                 price: 240,
                 stock: 13,
                 inStock: true,
