@@ -11,7 +11,7 @@ const addProduct = asyncHandler(async(req, res)=>{
         items: [],
         totalPrice: 0
     });
-    const {product, quantity} = req.body;
+    let {product, quantity} = req.body;
     if(quantity < 1) throw new AppError('Invalid Quantity', 400);
     const productDoc = await Product.findOne({
         _id: product,
@@ -25,7 +25,7 @@ const addProduct = asyncHandler(async(req, res)=>{
         if(existingItem.quantity + quantity > productDoc.stock){
             throw new AppError('Not Enough Items in Stock', 400);
         }
-        quantity += existingItem.quantity;
+        existingItem.quantity += quantity;
     } else {
         if(quantity > productDoc.stock)
             throw new AppError('Not Enough Items in Stock', 400);

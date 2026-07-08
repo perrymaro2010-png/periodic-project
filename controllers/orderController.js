@@ -18,7 +18,7 @@ const createOrder = asyncHandler(async(req, res)=> {
     //per each item in cart:
     for (const item of cart.items){
         //get original product of product referenced in cart
-        const product = await Product.findOne({
+        let product = await Product.findOne({
             _id: item.product,
             isDeleted: false
         });
@@ -32,6 +32,11 @@ const createOrder = asyncHandler(async(req, res)=> {
             quantity: item.quantity,
             price: product.price
         });
+            //decrease stock value prior checkout
+        for(let i = 0; i < products.length; i++){
+            products[i].stock -= cart.items[i].quantity;
+            await products[i].save();
+        }
     };
     //create order
     const order = await Order.create({
@@ -39,15 +44,11 @@ const createOrder = asyncHandler(async(req, res)=> {
         items: orderedItems,
         totalPrice: cart.totalPrice
     });
-    //decrease stock value prior checkout
-    for(let i = 0; i < products.length; i++){
-        product[i].stock -= cart.items[i].quantity;
-        await products[i].save();
-    }
+
     cart.items = [];
     cart.totalPrice = 0;
     await cart.save();
-    ok(res, order, 'Checkout Successful');
+    ok(res, order, 'Order Created Successfully');
 });
 
 //get past orders
