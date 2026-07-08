@@ -1,2 +1,0 @@
-## Periodic Project: Vida Loca Clothing Store
-## This is the all you need to initate Vida Loca Clothing Store, where you can upload your own products, buy exceptional attire, and keep a clean history for all of your orders! 
