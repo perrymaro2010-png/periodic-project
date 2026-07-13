@@ -1,35 +1,51 @@
-const mongoose = require('mongoose');
-const productSchema = new mongoose.Schema({
-    name:{
-        type: String,
-        unique: true,
-        required: [true, "Product name is a required field"]
+const mongoose = require("mongoose");
+const productSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "Product name is a required field"],
+      trim: true,
     },
-    price:{
-        type: Number,
-        required: [true, "Product price is a required field"],
-        min: 0
+    description: {
+      type: String,
+      required: true,
+      trim: true,
     },
-    stock:{
-        type: Number,
-        required: [true, "Stock value is a required field"]
+    price: {
+      type: Number,
+      required: [true, "Product price is a required field"],
+      min: [0, "Price cannot have a negative value"],
     },
-    inStock:{
-        type: Boolean,
-        required: [true, "Stock boolean value is a required field"]
+    stock: {
+      type: Number,
+      required: [true, "Stock value is a required field"],
+      min: [0, "Stock cannot have a negative value"],
+      default: 0,
     },
-    category:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Category',
-        required: true
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
+      required: true,
     },
     isDeleted: {
-        type: Boolean,
-        default: false
-    }
-}, {
-    timestamps: true
+      type: Boolean,
+      default: false,
+    },
+    images: {
+      type: [String],
+      default: [],
+    },
+  },
+  {
+    timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+  },
+);
+
+productSchema.virtual("inStock").get(function () {
+  return this.stock > 0;
 });
 
-const Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model("Product", productSchema);
 module.exports = Product;
