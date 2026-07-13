@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 //const mongoSanitize = require('express-mongo-sanitize');
 const cors = require('cors');
-const connectDB = require('./config/connect');
+const connectDB = require('./db/connect');
 
 const productRoutes = require('./routes/products');
 const categoryRoutes = require('./routes/category');
