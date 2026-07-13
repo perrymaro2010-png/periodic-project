@@ -8,12 +8,21 @@ const categorySchema = new mongoose.Schema({
     },
     description:{
         type: String,
-        required: [true, "Category description is a required field"]
+    },
+    slug:{
+        type: String,
+        lowercase: true
     },
     isDeleted:{
         type: Boolean,
-        default: true
+        default: false
     }
 });
+
+categorySchema.pre('save', function(next){
+    this.slug = this.name
+    .toLowerCasae()
+    .replace(/\s+/g, "-");
+})
 const Category = mongoose.model('Category', categorySchema);
 module.exports = Category;
