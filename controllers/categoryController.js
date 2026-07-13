@@ -24,22 +24,19 @@ const updateCategory = asyncHandler(async(req, res)=>{
 
 const deleteCategory = asyncHandler(async(req, res)=>{
     const id = req.params.id;
-    const deleted = await Category.findByIdAndUpdate(id, {isDeleted: true}, {new: true, runValidators: true});
+    const deleted = await Category.findByIdAndDelete(id);
     if(!deleted) throw new AppError('Category Not Found', 404);
     ok(res, deleted, 'Category Deleted Successfully');
 });
 
 const getAllCategories = asyncHandler(async(req, res)=>{
-    const categories = await Category.find({isDeleted: false});
+    const categories = await Category.find({});
     if(!categories.length) throw new AppError('No Categories Are Available Yet', 404);
     ok(res, categories, 'Categories Fetched Successfully');
 });
 
 const getCategory = asyncHandler(async(req, res)=>{
-    const category = await Category.findOne({
-        _id: req.params.id,
-        isDeleted: false
-    });
+    const category = await Category.findById(req.params.id);
     if(!category) throw new AppError('Category Not Found', 404);
     ok(res, category, 'Category Fetched Successfully');
 });
