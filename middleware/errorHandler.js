@@ -1,9 +1,9 @@
 const AppError = require('../utils/AppError');
 
 const errorHandler = (err, req, res, next) => {
-    if(err.name == 'CastError')
+    if(err.name === 'CastError')
         if(err.kind === 'ObjectId'){
-            err = new AppError('Invalid ObjectId', 400);
+            err = new AppError(`Invalid ObjectId: ${err.value}`, 400);
         } else if (err.kind === 'Number'){
             err = new AppError('Must be a Number', 400);
         } else if (err.kind === 'String'){
@@ -17,7 +17,12 @@ const errorHandler = (err, req, res, next) => {
             .join(', ');
 
         err = new AppError(message, 400);
-    }
+    };
+
+    if (err.code === 11000){
+        const field = Object.keys(err.keyValue)[0];
+        err = new AppError(`${field} already exists`, 409);
+    };
     
     const statusCode = err.statusCode || 500;
 
