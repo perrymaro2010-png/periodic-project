@@ -4,6 +4,7 @@ const Product = require('../models/productModel');
 
 const createProduct = asyncHandler(async (req, res)=>{
     const {name, price, stock, inStock, category} = req.body;
+    if(!category) throw new AppError('Category Not Found', 404);
     const existingProduct = await Product.findOne({
         name: name,
     });
@@ -33,7 +34,14 @@ const deleteProduct = asyncHandler(async(req, res)=>{
 });
 
 const getAllProducts = asyncHandler(async(req, res)=>{
-    const products = await Product.find({isDeleted: false});
+    let filter = {};
+    if (req.query.category){filter.category = req.query.category}
+    if(req.query.maxPrice || req.query.minPrice){
+        filter.price = {};
+        if(req.query.maxPrice) filter.price.$lte = req.query.maxPrice;
+        if(req.query.minPrice) filter.price.$gte = req.query.minPrice;
+    }
+    const products = await Product.find(filter).populate("category", "name");
     if(!products.length) throw new AppError('No Products Are Available Yet', 404);
     ok(res, products, 'Products Fetched Successfully');
 });
@@ -42,7 +50,7 @@ const getProduct = asyncHandler(async(req, res)=>{
     const product = await Product.findOne({
         _id: req.params.id,
         isDeleted: false
-    });
+    }).populate("category", "name description");
     if(!product) throw new AppError('Product Not Found', 404);
     ok(res, product, 'Product Fetched Successfully');
 });
