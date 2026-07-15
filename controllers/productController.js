@@ -38,9 +38,28 @@ const getAllProducts = asyncHandler(async(req, res)=>{
     if (req.query.category){filter.category = req.query.category}
     if(req.query.maxPrice || req.query.minPrice){
         filter.price = {};
-        if(req.query.maxPrice) filter.price.$lte = req.query.maxPrice;
-        if(req.query.minPrice) filter.price.$gte = req.query.minPrice;
+        if(req.query.maxPrice) filter.price.$lte = Number(req.query.maxPrice);
+        if(req.query.minPrice) filter.price.$gte = Number(req.query.minPrice);
     }
+    if(req.query.inStock === "true"){
+        filter.stock = {$gte: 1}
+    }
+    if(req.query.search){
+        filter.$or = [
+            {
+                name:{
+                    $regex: req.query.search,
+                    $options: "i"
+                }
+            },
+            {
+                description:{
+                    $regex: req.query.search,
+                    $options: "i"
+                }
+            }
+        ]
+    };
     const products = await Product.find(filter).populate("category", "name");
     if(!products.length) throw new AppError('No Products Are Available Yet', 404);
     ok(res, products, 'Products Fetched Successfully');

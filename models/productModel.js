@@ -44,7 +44,7 @@ const productSchema = new mongoose.Schema(
 );
 
 productSchema.virtual("inStock").get(function () {
-  return this.stock > 0;
+  return this.stock >= 1;
 });
 
 const Product = mongoose.model("Product", productSchema);
