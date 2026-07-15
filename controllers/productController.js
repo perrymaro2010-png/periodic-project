@@ -4,6 +4,11 @@ const Product = require("../models/productModel");
 
 const createProduct = asyncHandler(async (req, res) => {
   const { name, price, stock, category } = req.body;
+  const fields = ["name", "price", "stock"];
+  for (field of fields) {
+    if (req.body[field] === undefined)
+      throw new AppError("All fields are required", 400);
+  }
   if (!category) throw new AppError("Category Not Found", 404);
   const existingProduct = await Product.findOne({
     name: name,
