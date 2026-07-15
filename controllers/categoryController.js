@@ -4,6 +4,7 @@ const Category = require("../models/categoryModel");
 
 const createCategory = asyncHandler(async (req, res) => {
   const { name, description } = req.body;
+  if(!name || !description){}
   const existingCategory = await Category.findOne({
     name: name,
   });
@@ -17,6 +18,12 @@ const createCategory = asyncHandler(async (req, res) => {
 
 const updateCategory = asyncHandler(async (req, res) => {
   const id = req.params.id;
+  if(req.body.name){
+    req.body.slug = req.body.name
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+  }
   const category = await Category.findByIdAndUpdate(id, req.body, {
     new: true,
     runValidators: true,

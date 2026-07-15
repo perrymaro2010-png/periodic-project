@@ -3,7 +3,7 @@ const AppError = require('../utils/AppError');
 const Product = require('../models/productModel');
 
 const createProduct = asyncHandler(async (req, res)=>{
-    const {name, price, stock, inStock, category} = req.body;
+    const {name, price, stock, category} = req.body;
     if(!category) throw new AppError('Category Not Found', 404);
     const existingProduct = await Product.findOne({
         name: name,
@@ -13,7 +13,6 @@ const createProduct = asyncHandler(async (req, res)=>{
         name, 
         price, 
         stock,
-        inStock,
         category
     });
     ok(res, product, 'Product created successfully.', 201);
@@ -75,7 +74,7 @@ const getProduct = asyncHandler(async(req, res)=>{
 });
 
 const replaceProduct = asyncHandler(async(req, res)=>{
-    const fields = ['name', 'price', 'stock', 'inStock', 'category'];
+    const fields = ['name', 'price', 'stock', 'category'];
     for(field of fields){
         if(req.body[field] === undefined)
             throw new AppError('All fields are required', 400);

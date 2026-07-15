@@ -23,9 +23,8 @@ const categorySchema = new mongoose.Schema(
   },
 );
 
-categorySchema.pre("save", function (next) {
+categorySchema.pre("save", function () {
   this.slug = this.name.trim().toLowerCase().replace(/\s+/g, "-");
-  next();
 });
 const Category = mongoose.model("Category", categorySchema);
 module.exports = Category;
