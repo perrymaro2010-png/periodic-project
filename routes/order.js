@@ -3,12 +3,14 @@ const router = express.Router();
 const {
     createOrder,
     getPastOrders,
-    getSpecificOrder
+    getSpecificOrder,
+    updateStatus
 } = require('../controllers/orderController');
 
-router.post('/:id', createOrder);
-router.get('/:id', getPastOrders);
-router.get('/:userID/:orderID', getSpecificOrder);
+router.post('/', createOrder);
+router.get('/', getPastOrders);
+router.get('/:id', getSpecificOrder);
+router.patch('/:id/status', updateStatus);
 
 
 module.exports = router;
