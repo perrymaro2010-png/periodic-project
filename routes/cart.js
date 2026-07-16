@@ -8,10 +8,10 @@ const {
   clearCart,
 } = require("../controllers/cartController");
 
-router.get("/:id", getCart);
+router.get("/", getCart);
 router.post("/items", addProduct);
-router.delete("/items", removeProductEntirely);
+router.delete("/items/:productID", removeProductEntirely);
 router.patch("/items/:productID", updateProductQuantity);
-router.put("/items/:productID", clearCart);
+router.delete("/items", clearCart);
 
 module.exports = router;

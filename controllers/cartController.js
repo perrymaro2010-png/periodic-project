@@ -82,13 +82,13 @@ const updateProductQuantity = asyncHandler(async (req, res) => {
   }
   let productDoc = cart.items.find((b) => b.product.equals(product));
   if (!productDoc) throw new AppError("Product Not Found", 404);
+  const updatedQuantity = productDoc.quantity + quantity;
+  const actualProduct = await Product.findById(productDoc.product);
   if (updatedQuantity < 1) {
     cart.items = cart.items.filter((item) => !item.product.equals(product));
   } else {
     productDoc.quantity = updatedQuantity;
   }
-  const updatedQuantity = productDoc.quantity + quantity;
-  const actualProduct = await Product.findById(productDoc.product);
   if (!actualProduct || actualProduct.isDeleted) {
     throw new AppError("Product Not Found", 404);
   }
