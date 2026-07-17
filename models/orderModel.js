@@ -39,6 +39,11 @@ const orderSchema = new mongoose.Schema({
         street:{type: String, required:true},
         city:{type: String},
         country:{type: String, required: true}
+    },
+    paymentMethod:{
+        type:String,
+        enum: ['CASH','CARD'],
+        default: 'CASH'
     }
 }, {timestamps: true});
 

@@ -48,7 +48,8 @@ const createOrder = asyncHandler(async(req, res)=> {
         orderNumber: orderNumber,
         items: orderedItems,
         totalPrice: totalPrice,
-        shippingAddress: req.body.shippingAddress
+        shippingAddress: req.body.shippingAddress,
+        paymentMethod: req.body.paymentMethod
     });
 
     cart.items = [];
