@@ -1,0 +1,1800 @@
+{
+  "info": {
+    "_postman_id": "3069b0dc-58db-4985-b00e-29952cb3585a",
+    "name": "E-Commerce API",
+    "description": "Periodic Project - Vida Loca Clothing Store",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55881861",
+    "_collection_link": "https://go.postman.co/collection/55881861-3069b0dc-58db-4985-b00e-29952cb3585a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Get Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/categories",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "categories"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Categories",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/categories",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "categories"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "692"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2b4-mSuNCrR/U7x98125zBKwKRIe6kk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 12:39:05 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Categories Fetched Successfully\",\n    \"data\": [\n        {\n            \"_id\": \"6a573f2a7aa841ed0d843c28\",\n            \"name\": \"children\",\n            \"description\": \"Clothing for kids\",\n            \"__v\": 0,\n            \"createdAt\": \"2026-07-15T08:04:58.238Z\",\n            \"updatedAt\": \"2026-07-17T12:32:37.481Z\",\n            \"slug\": \"children\",\n            \"id\": \"6a573f2a7aa841ed0d843c28\"\n        },\n        {\n            \"_id\": \"6a573f2a7aa841ed0d843c29\",\n            \"name\": \"women\",\n            \"description\": \"Clothing for women\",\n            \"__v\": 0,\n            \"createdAt\": \"2026-07-15T08:04:58.239Z\",\n            \"updatedAt\": \"2026-07-15T08:04:58.239Z\",\n            \"id\": \"6a573f2a7aa841ed0d843c29\"\n        },\n        {\n            \"_id\": \"6a573f2a7aa841ed0d843c2a\",\n            \"name\": \"men\",\n            \"description\": \"Clothing for men\",\n            \"__v\": 0,\n            \"createdAt\": \"2026-07-15T08:04:58.239Z\",\n            \"updatedAt\": \"2026-07-15T08:04:58.239Z\",\n            \"id\": \"6a573f2a7aa841ed0d843c2a\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Category By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/categories/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "categories",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a573f2a7aa841ed0d843c28",
+                  "description": "i.e. \"kids\" category"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Category By ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/categories/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "categories",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "6a573f2a7aa841ed0d843c28",
+                      "description": "i.e. \"kids\" category"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "264"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"108-hS5i+0islA26xshuRsCSSmQDy1A\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 12:31:21 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Category Fetched Successfully\",\n    \"data\": {\n        \"_id\": \"6a573f2a7aa841ed0d843c28\",\n        \"name\": \"kids\",\n        \"description\": \"Clothing for kids\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-07-15T08:04:58.238Z\",\n        \"updatedAt\": \"2026-07-15T08:04:58.238Z\",\n        \"id\": \"6a573f2a7aa841ed0d843c28\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"babies\", \r\n    \"description\": \"Clothing for baby boys and girls\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/categories",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "categories"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Category",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"babies\", \r\n    \"description\": \"Clothing for baby boys and girls\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/categories",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "categories"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "298"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"12a-9JIXZmmeYSjvH1GLlJBIb3kU/24\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 12:31:28 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 201,\n    \"message\": \"Category created successfully.\",\n    \"data\": {\n        \"name\": \"babies\",\n        \"description\": \"Clothing for baby boys and girls\",\n        \"_id\": \"6a5a20a077b740eaf2d4a68b\",\n        \"createdAt\": \"2026-07-17T12:31:28.279Z\",\n        \"updatedAt\": \"2026-07-17T12:31:28.279Z\",\n        \"slug\": \"babies\",\n        \"__v\": 0,\n        \"id\": \"6a5a20a077b740eaf2d4a68b\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Category",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"children\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/categories/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "categories",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a573f2a7aa841ed0d843c28",
+                  "description": "i.e. \"kids\" category"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Category",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"children\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/categories/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "categories",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "6a573f2a7aa841ed0d843c28",
+                      "description": "i.e. \"kids\" category"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "286"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"11e-m3bS3tkSNwqntQGBUHKHkpD/uvo\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 12:32:37 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Category Updated Successfully\",\n    \"data\": {\n        \"_id\": \"6a573f2a7aa841ed0d843c28\",\n        \"name\": \"children\",\n        \"description\": \"Clothing for kids\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-07-15T08:04:58.238Z\",\n        \"updatedAt\": \"2026-07-17T12:32:37.481Z\",\n        \"slug\": \"children\",\n        \"id\": \"6a573f2a7aa841ed0d843c28\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Category",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/categories/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "categories",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a5a20a077b740eaf2d4a68b",
+                  "description": "i.e. \"babies\" category"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete Category",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/categories/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "categories",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "6a5a20a077b740eaf2d4a68b",
+                      "description": "i.e. \"babies\" category"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "297"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"129-Rsd5wseKQs6WsdzSMBQO0SwuM4E\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 12:36:13 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Category Deleted Successfully\",\n    \"data\": {\n        \"_id\": \"6a5a20a077b740eaf2d4a68b\",\n        \"name\": \"babies\",\n        \"description\": \"Clothing for baby boys and girls\",\n        \"createdAt\": \"2026-07-17T12:31:28.279Z\",\n        \"updatedAt\": \"2026-07-17T12:31:28.279Z\",\n        \"slug\": \"babies\",\n        \"__v\": 0,\n        \"id\": \"6a5a20a077b740eaf2d4a68b\"\n    }\n}"
+            }
+          ]
+        }
+      ],
+      "description": "Categories API - working and messing with categories"
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/products",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Products",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/products",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "2947"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"b83-WGJR0vXhoIhZTlNkdpaRgd2TmZA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 12:36:20 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Products Fetched Successfully\",\n    \"data\": [\n        {\n            \"_id\": \"6a573f2a7aa841ed0d843c2b\",\n            \"name\": \"Dino-t-shirt\",\n            \"description\": \"Green and Orange Dino pattern with grey a baby blue background\",\n            \"price\": 100,\n            \"stock\": 52,\n            \"category\": {\n                \"_id\": \"6a573f2a7aa841ed0d843c28\",\n                \"name\": \"children\",\n                \"id\": \"6a573f2a7aa841ed0d843c28\"\n            },\n            \"isDeleted\": true,\n            \"images\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2026-07-15T08:04:58.251Z\",\n            \"updatedAt\": \"2026-07-15T13:38:54.647Z\",\n            \"inStock\": true,\n            \"id\": \"6a573f2a7aa841ed0d843c2b\"\n        },\n        {\n            \"_id\": \"6a573f2a7aa841ed0d843c2c\",\n            \"name\": \"Wide-Leg Pants\",\n            \"description\": \"Black pants slim over the hip and widens around the knees and below\",\n            \"price\": 240,\n            \"stock\": 13,\n            \"category\": {\n                \"_id\": \"6a573f2a7aa841ed0d843c29\",\n                \"name\": \"women\",\n                \"id\": \"6a573f2a7aa841ed0d843c29\"\n            },\n            \"isDeleted\": false,\n            \"images\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2026-07-15T08:04:58.252Z\",\n            \"updatedAt\": \"2026-07-15T08:04:58.252Z\",\n            \"inStock\": true,\n            \"id\": \"6a573f2a7aa841ed0d843c2c\"\n        },\n        {\n            \"_id\": \"6a573f2a7aa841ed0d843c2d\",\n            \"name\": \"Teal Blazer\",\n            \"description\": \"Teal blazer with brown buttons and a cream interior\",\n            \"price\": 310,\n            \"stock\": 1,\n            \"category\": {\n                \"_id\": \"6a573f2a7aa841ed0d843c2a\",\n                \"name\": \"men\",\n                \"id\": \"6a573f2a7aa841ed0d843c2a\"\n            },\n            \"isDeleted\": false,\n            \"images\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2026-07-15T08:04:58.252Z\",\n            \"updatedAt\": \"2026-07-16T23:14:54.997Z\",\n            \"inStock\": true,\n            \"id\": \"6a573f2a7aa841ed0d843c2d\"\n        },\n        {\n            \"_id\": \"6a573f2a7aa841ed0d843c2e\",\n            \"name\": \"Orange Shorts\",\n            \"description\": \"Trouser-like shorts for ages 5-7 year old boys\",\n            \"price\": 250,\n            \"stock\": 7,\n            \"category\": {\n                \"_id\": \"6a573f2a7aa841ed0d843c28\",\n                \"name\": \"children\",\n                \"id\": \"6a573f2a7aa841ed0d843c28\"\n            },\n            \"isDeleted\": false,\n            \"images\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2026-07-15T08:04:58.252Z\",\n            \"updatedAt\": \"2026-07-15T08:04:58.252Z\",\n            \"inStock\": true,\n            \"id\": \"6a573f2a7aa841ed0d843c2e\"\n        },\n        {\n            \"_id\": \"6a573f2a7aa841ed0d843c2f\",\n            \"name\": \"Ariel T-Shirt\",\n            \"description\": \"T-shirt with the Disney Princess printed on the back, suitable for 12 year old girls\",\n            \"price\": 315,\n            \"stock\": 26,\n            \"category\": {\n                \"_id\": \"6a573f2a7aa841ed0d843c28\",\n                \"name\": \"children\",\n                \"id\": \"6a573f2a7aa841ed0d843c28\"\n            },\n            \"isDeleted\": false,\n            \"images\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2026-07-15T08:04:58.253Z\",\n            \"updatedAt\": \"2026-07-15T08:04:58.253Z\",\n            \"inStock\": true,\n            \"id\": \"6a573f2a7aa841ed0d843c2f\"\n        },\n        {\n            \"_id\": \"6a573f2a7aa841ed0d843c30\",\n            \"name\": \"Pistache Blouse\",\n            \"description\": \"blouse with puffed half-sleeves and olive buttons\",\n            \"price\": 420,\n            \"stock\": 13,\n            \"category\": {\n                \"_id\": \"6a573f2a7aa841ed0d843c29\",\n                \"name\": \"women\",\n                \"id\": \"6a573f2a7aa841ed0d843c29\"\n            },\n            \"isDeleted\": true,\n            \"images\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2026-07-15T08:04:58.253Z\",\n            \"updatedAt\": \"2026-07-15T08:04:58.253Z\",\n            \"inStock\": true,\n            \"id\": \"6a573f2a7aa841ed0d843c30\"\n        },\n        {\n            \"_id\": \"6a573f2a7aa841ed0d843c31\",\n            \"name\": \"Dark Brown shoes\",\n            \"description\": \"dark brown Clarks shoes sizes range 41-46\",\n            \"price\": 650,\n            \"stock\": 36,\n            \"category\": {\n                \"_id\": \"6a573f2a7aa841ed0d843c2a\",\n                \"name\": \"men\",\n                \"id\": \"6a573f2a7aa841ed0d843c2a\"\n            },\n            \"isDeleted\": false,\n            \"images\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2026-07-15T08:04:58.253Z\",\n            \"updatedAt\": \"2026-07-15T08:04:58.253Z\",\n            \"inStock\": true,\n            \"id\": \"6a573f2a7aa841ed0d843c31\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Products By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/products/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "products",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a573f2a7aa841ed0d843c2e",
+                  "description": "i.e. \"orange shorts\" product\n"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Products By ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/products/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "6a573f2a7aa841ed0d843c2e",
+                      "description": "i.e. \"orange shorts\" product\n"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "498"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1f2-9NQ8uWl6qyfPm/e9NTsslZ1LfqM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 12:36:26 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Product Fetched Successfully\",\n    \"data\": {\n        \"_id\": \"6a573f2a7aa841ed0d843c2e\",\n        \"name\": \"Orange Shorts\",\n        \"description\": \"Trouser-like shorts for ages 5-7 year old boys\",\n        \"price\": 250,\n        \"stock\": 7,\n        \"category\": {\n            \"_id\": \"6a573f2a7aa841ed0d843c28\",\n            \"name\": \"children\",\n            \"description\": \"Clothing for kids\",\n            \"id\": \"6a573f2a7aa841ed0d843c28\"\n        },\n        \"isDeleted\": false,\n        \"images\": [],\n        \"__v\": 0,\n        \"createdAt\": \"2026-07-15T08:04:58.252Z\",\n        \"updatedAt\": \"2026-07-15T08:04:58.252Z\",\n        \"inStock\": true,\n        \"id\": \"6a573f2a7aa841ed0d843c2e\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Yellow Pants\",\r\n    \"description\": \"Yellow pants suitable for girls between 8-10 years old\",\r\n    \"price\": 340,\r\n    \"stock\": 45,\r\n    \"category\": \"6a573f2a7aa841ed0d843c28\"   \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/products",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Product",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Yellow Pants\",\r\n    \"description\": \"Yellow pants suitable for girls between 8-10 years old\",\r\n    \"price\": 340,\r\n    \"stock\": 45,\r\n    \"category\": \"6a573f2a7aa841ed0d843c28\"   \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/products",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "415"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"19f-QX/FNcaUpVXpvUZhVQIzBtsTgh0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 12:45:14 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 201,\n    \"message\": \"Product created successfully.\",\n    \"data\": {\n        \"name\": \"Yellow Pants\",\n        \"description\": \"Yellow pants suitable for girls between 8-10 years old\",\n        \"price\": 340,\n        \"stock\": 45,\n        \"category\": \"6a573f2a7aa841ed0d843c28\",\n        \"isDeleted\": false,\n        \"images\": [],\n        \"_id\": \"6a5a23da53acbce4029da77a\",\n        \"createdAt\": \"2026-07-17T12:45:14.703Z\",\n        \"updatedAt\": \"2026-07-17T12:45:14.703Z\",\n        \"__v\": 0,\n        \"inStock\": true,\n        \"id\": \"6a5a23da53acbce4029da77a\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Orange Blouse\",\r\n    \"description\":\"Orange blouse with long sleeves and olive embroidery\",\r\n    \"price\":300,\r\n    \"stock\":29,\r\n    \"category\":\"6a573f2a7aa841ed0d843c29\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/products/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "products",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a573f2a7aa841ed0d843c2e",
+                  "description": "i.e. \"orange shorts\" product\n"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Product",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\":\"Orange Blouse\",\r\n    \"description\":\"Orange blouse with long sleeves and olive embroidery\",\r\n    \"price\":300,\r\n    \"stock\":29,\r\n    \"category\":\"6a573f2a7aa841ed0d843c29\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/products/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "6a573f2a7aa841ed0d843c2e",
+                      "description": "i.e. \"orange shorts\" product\n"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "413"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"19d-uNsQcsmHvVjnrEMrWSy0Bix+vT0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 13:13:55 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"_id\": \"6a573f2a7aa841ed0d843c2e\",\n        \"name\": \"Orange Blouse\",\n        \"description\": \"Orange blouse with long sleeves and olive embroidery\",\n        \"price\": 300,\n        \"stock\": 29,\n        \"category\": \"6a573f2a7aa841ed0d843c29\",\n        \"isDeleted\": false,\n        \"images\": [],\n        \"__v\": 0,\n        \"createdAt\": \"2026-07-15T08:04:58.252Z\",\n        \"updatedAt\": \"2026-07-17T13:13:55.194Z\",\n        \"inStock\": true,\n        \"id\": \"6a573f2a7aa841ed0d843c2e\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Product Copy",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/products/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "products",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a573f2a7aa841ed0d843c2e",
+                  "description": "i.e. \"orange shorts\" product\n"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Product Copy",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/products/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "6a573f2a7aa841ed0d843c2e",
+                      "description": "i.e. \"orange shorts\" product\n"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "407"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"197-TB+iS9amrrBw/1L2xLPLE5rq0X8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 12:53:45 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Product Updated Successfully.\",\n    \"data\": {\n        \"_id\": \"6a573f2a7aa841ed0d843c2e\",\n        \"name\": \"Orange Shorts\",\n        \"description\": \"Trouser-like shorts for ages 5-7 year old boys\",\n        \"price\": 250,\n        \"stock\": 7,\n        \"category\": \"6a573f2a7aa841ed0d843c28\",\n        \"isDeleted\": false,\n        \"images\": [],\n        \"__v\": 0,\n        \"createdAt\": \"2026-07-15T08:04:58.252Z\",\n        \"updatedAt\": \"2026-07-15T08:04:58.252Z\",\n        \"inStock\": true,\n        \"id\": \"6a573f2a7aa841ed0d843c2e\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/products/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "products",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a573f2a7aa841ed0d843c2e",
+                  "description": "i.e. \"orange shorts\" product\n"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete Product",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/products/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "6a573f2a7aa841ed0d843c2e",
+                      "description": "i.e. \"orange shorts\" product\n"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "412"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"19c-MX/Z8LxGVoY7kTWNPAVgBUhdYx4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 13:14:40 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Product Deleted Successfully\",\n    \"data\": {\n        \"_id\": \"6a573f2a7aa841ed0d843c2e\",\n        \"name\": \"Orange Blouse\",\n        \"description\": \"Orange blouse with long sleeves and olive embroidery\",\n        \"price\": 300,\n        \"stock\": 29,\n        \"category\": \"6a573f2a7aa841ed0d843c29\",\n        \"isDeleted\": true,\n        \"images\": [],\n        \"__v\": 0,\n        \"createdAt\": \"2026-07-15T08:04:58.252Z\",\n        \"updatedAt\": \"2026-07-17T13:14:40.804Z\",\n        \"inStock\": true,\n        \"id\": \"6a573f2a7aa841ed0d843c2e\"\n    }\n}"
+            }
+          ]
+        }
+      ],
+      "description": "Products API - messing with products"
+    },
+    {
+      "name": "Cart",
+      "item": [
+        {
+          "name": "Get User Cart",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\":\"6880f4b9c1d2e3f456789abc\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/cart",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "cart"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get User Cart",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":\"6880f4b9c1d2e3f456789abc\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/cart",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "cart"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "240"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"f0-hR+ZlieoNTvmFHGkzmmsal5Xz8w\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 13:15:07 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Cart Fetched Successfully\",\n    \"data\": {\n        \"user\": \"6880f4b9c1d2e3f456789abc\",\n        \"items\": [],\n        \"totalPrice\": 0,\n        \"_id\": \"6a5a2adb53acbce4029da77b\",\n        \"createdAt\": \"2026-07-17T13:15:07.448Z\",\n        \"updatedAt\": \"2026-07-17T13:15:07.448Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Add Product to Cart",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\":\"6880f4b9c1d2e3f456789abc\",\r\n    \"product\":\"6a573f2a7aa841ed0d843c30\",\r\n    \"quantity\": 5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/cart/items",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "cart",
+                "items"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Add Product to Cart",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":\"6880f4b9c1d2e3f456789abc\",\r\n    \"product\":\"6a573f2a7aa841ed0d843c2f\",\r\n    \"quantity\": 1\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/cart/items",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "cart",
+                    "items"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "339"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"153-NON3Oq8NhCkP8vOaLVZEyelXOwU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 13:15:47 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Product Added Successfully\",\n    \"data\": {\n        \"_id\": \"6a5a2adb53acbce4029da77b\",\n        \"user\": \"6880f4b9c1d2e3f456789abc\",\n        \"items\": [\n            {\n                \"product\": \"6a573f2a7aa841ed0d843c2f\",\n                \"quantity\": 1,\n                \"price\": 315,\n                \"_id\": \"6a5a2b0353acbce4029da77c\"\n            }\n        ],\n        \"totalPrice\": 315,\n        \"createdAt\": \"2026-07-17T13:15:07.448Z\",\n        \"updatedAt\": \"2026-07-17T13:15:47.826Z\",\n        \"__v\": 1\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Cart Item Quantity",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\":\"6880f4b9c1d2e3f456789abc\",\r\n    \"product\":\"6a573f2a7aa841ed0d843c2f\",\r\n    \"quantity\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/cart/items/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "cart",
+                "items",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a573f2a7aa841ed0d843c2f"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Cart Item Quantity",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":\"6880f4b9c1d2e3f456789abc\",\r\n    \"product\":\"6a573f2a7aa841ed0d843c2f\",\r\n    \"quantity\": 2\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/cart/items/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "cart",
+                    "items",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "6a573f2a7aa841ed0d843c2f"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "350"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"15e-Xu+K7Hb+eUQHQrfnl+mB/kUAL80\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 13:18:58 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Product Quantity Updated Successfully\",\n    \"data\": {\n        \"_id\": \"6a5a2adb53acbce4029da77b\",\n        \"user\": \"6880f4b9c1d2e3f456789abc\",\n        \"items\": [\n            {\n                \"product\": \"6a573f2a7aa841ed0d843c2f\",\n                \"quantity\": 3,\n                \"price\": 315,\n                \"_id\": \"6a5a2b0353acbce4029da77c\"\n            }\n        ],\n        \"totalPrice\": 945,\n        \"createdAt\": \"2026-07-17T13:15:07.448Z\",\n        \"updatedAt\": \"2026-07-17T13:18:58.278Z\",\n        \"__v\": 1\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Remove Item from Cart",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\":\"6880f4b9c1d2e3f456789abc\",\r\n    \"product\":\"6a573f2a7aa841ed0d843c2f\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/cart/items/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "cart",
+                "items",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Remove Item from Cart",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":\"6880f4b9c1d2e3f456789abc\",\r\n    \"product\":\"6a573f2a7aa841ed0d843c2f\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/cart/items/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "cart",
+                    "items",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "439"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1b7-CvShTQ8T5Bd3304kAp1bC4kbPbk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 15:27:57 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Product Removed Successfully\",\n    \"data\": {\n        \"_id\": \"6a5a2adb53acbce4029da77b\",\n        \"user\": \"6880f4b9c1d2e3f456789abc\",\n        \"items\": [\n            {\n                \"product\": \"6a573f2a7aa841ed0d843c31\",\n                \"quantity\": 5,\n                \"price\": 650,\n                \"_id\": \"6a5a497653acbce4029da781\"\n            },\n            {\n                \"product\": \"6a573f2a7aa841ed0d843c30\",\n                \"quantity\": 5,\n                \"price\": 420,\n                \"_id\": \"6a5a499653acbce4029da786\"\n            }\n        ],\n        \"totalPrice\": 5350,\n        \"createdAt\": \"2026-07-17T13:15:07.448Z\",\n        \"updatedAt\": \"2026-07-17T15:27:57.686Z\",\n        \"__v\": 4\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Clear Cart",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\":\"6880f4b9c1d2e3f456789abc\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/cart/items",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "cart",
+                "items"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Clear Cart",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":\"6880f4b9c1d2e3f456789abc\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/cart/items",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "cart",
+                    "items"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "240"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"f0-1sxIJJmz4njcTdg7bFRPbGzO8A0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 15:29:19 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Cart Cleared Successfully\",\n    \"data\": {\n        \"_id\": \"6a5a2adb53acbce4029da77b\",\n        \"user\": \"6880f4b9c1d2e3f456789abc\",\n        \"items\": [],\n        \"totalPrice\": 0,\n        \"createdAt\": \"2026-07-17T13:15:07.448Z\",\n        \"updatedAt\": \"2026-07-17T15:29:19.125Z\",\n        \"__v\": 5\n    }\n}"
+            }
+          ]
+        }
+      ],
+      "description": "Cart API - mess with it after messing with categories and products"
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Create Order",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\":\"6a573f2a7a2841ed0d843e30\",\r\n    \"shippingAddress\":{\r\n        \"street\":\"132 to North Greenwich\",\r\n        \"city\":\"London\",\r\n        \"country\":\"England, UK\"\r\n    },\r\n    \"paymentMethod\":\"CASH\"   \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/orders",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Order",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":\"6a573f2a7a2841ed0d843e30\",\r\n    \"shippingAddress\":{\r\n        \"street\":\"132 to North Greenwich\",\r\n        \"city\":\"London\",\r\n        \"country\":\"England, UK\"\r\n    },\r\n    \"paymentMethod\":\"CASH\"   \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/orders",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "orders"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "499"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1f3-dFIqCU0eFhV0d1kJPdT+xfgJVaY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 17:21:03 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Order Created Successfully\",\n    \"data\": {\n        \"orderNumber\": \"ORD-1784308863887\",\n        \"items\": [\n            {\n                \"name\": \"Dino-t-shirt\",\n                \"product\": \"6a573f2a7aa841ed0d843c2b\",\n                \"quantity\": 15,\n                \"price\": 100,\n                \"_id\": \"6a5a647f53acbce4029da790\"\n            }\n        ],\n        \"totalPrice\": 1500,\n        \"status\": \"pending\",\n        \"shippingAddress\": {\n            \"street\": \"132 to North Greenwich\",\n            \"city\": \"London\",\n            \"country\": \"England, UK\"\n        },\n        \"paymentMethod\": \"CASH\",\n        \"_id\": \"6a5a647f53acbce4029da78f\",\n        \"createdAt\": \"2026-07-17T17:21:03.893Z\",\n        \"updatedAt\": \"2026-07-17T17:21:03.893Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get User Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/orders",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get User Orders",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/orders",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "orders"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "946"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"3b2-oJsDyRBJNvCUMW04r1ag3u04Lqc\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 17:25:37 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Past Orders Fetched Successfully\",\n    \"data\": [\n        {\n            \"shippingAddress\": {\n                \"street\": \"132 to North Greenwich\",\n                \"city\": \"London\",\n                \"country\": \"England, UK\"\n            },\n            \"paymentMethod\": \"CASH\",\n            \"_id\": \"6a5965ef3885cf825de9cfdb\",\n            \"orderNumber\": \"ORD-1784243695004\",\n            \"items\": [\n                {\n                    \"name\": \"Teal Blazer\",\n                    \"product\": \"6a573f2a7aa841ed0d843c2d\",\n                    \"quantity\": 6,\n                    \"price\": 310,\n                    \"_id\": \"6a5965ef3885cf825de9cfdc\"\n                }\n            ],\n            \"totalPrice\": 1860,\n            \"status\": \"confirmed\",\n            \"createdAt\": \"2026-07-16T23:14:55.017Z\",\n            \"updatedAt\": \"2026-07-17T08:47:26.316Z\",\n            \"__v\": 0\n        },\n        {\n            \"shippingAddress\": {\n                \"street\": \"132 to North Greenwich\",\n                \"city\": \"London\",\n                \"country\": \"England, UK\"\n            },\n            \"_id\": \"6a5a647f53acbce4029da78f\",\n            \"orderNumber\": \"ORD-1784308863887\",\n            \"items\": [\n                {\n                    \"name\": \"Dino-t-shirt\",\n                    \"product\": \"6a573f2a7aa841ed0d843c2b\",\n                    \"quantity\": 15,\n                    \"price\": 100,\n                    \"_id\": \"6a5a647f53acbce4029da790\"\n                }\n            ],\n            \"totalPrice\": 1500,\n            \"status\": \"pending\",\n            \"paymentMethod\": \"CASH\",\n            \"createdAt\": \"2026-07-17T17:21:03.893Z\",\n            \"updatedAt\": \"2026-07-17T17:21:03.893Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Order by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/orders/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "orders",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "ORD-1784243695004",
+                  "description": "i.e. \"order\""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Order by ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/orders/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "orders",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "ORD-1784243695004",
+                      "description": "i.e. \"order\""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "499"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1f3-8K3JAFAZKsYllsClkPepjl+3lSA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 17:26:14 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Order Fetched Successfully\",\n    \"data\": {\n        \"shippingAddress\": {\n            \"street\": \"132 to North Greenwich\",\n            \"city\": \"London\",\n            \"country\": \"England, UK\"\n        },\n        \"paymentMethod\": \"CASH\",\n        \"_id\": \"6a5965ef3885cf825de9cfdb\",\n        \"orderNumber\": \"ORD-1784243695004\",\n        \"items\": [\n            {\n                \"name\": \"Teal Blazer\",\n                \"product\": \"6a573f2a7aa841ed0d843c2d\",\n                \"quantity\": 6,\n                \"price\": 310,\n                \"_id\": \"6a5965ef3885cf825de9cfdc\"\n            }\n        ],\n        \"totalPrice\": 1860,\n        \"status\": \"confirmed\",\n        \"createdAt\": \"2026-07-16T23:14:55.017Z\",\n        \"updatedAt\": \"2026-07-17T08:47:26.316Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        }
+      ],
+      "description": "Orders API - finish setting up the cart before moving on to orders!"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": ""
+    }
+  ]
+}

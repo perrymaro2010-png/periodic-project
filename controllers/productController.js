@@ -5,8 +5,8 @@ const Product = require("../models/productModel");
 //POST - create new product
 const createProduct = asyncHandler(async (req, res) => {
   //checking that all fields are present
-  const { name, price, stock, category } = req.body;
-  const fields = ["name", "price", "stock"];
+  const { name, description, price, stock, category } = req.body;
+  const fields = ["name", "description", "price", "stock"];
   for (field of fields) {
     if (req.body[field] === undefined)
       throw new AppError("All fields are required", 400);
@@ -21,6 +21,7 @@ const createProduct = asyncHandler(async (req, res) => {
   //create product
   const product = await Product.create({
     name,
+    description,
     price,
     stock,
     category,
@@ -117,7 +118,7 @@ const getProduct = asyncHandler(async (req, res) => {
 // PUT - completely update all details of product
 const replaceProduct = asyncHandler(async (req, res) => {
   // check for all fields availability
-  const fields = ["name", "price", "stock", "category"];
+  const fields = ["name", "description", "price", "stock", "category"];
   for (field of fields) {
     if (req.body[field] === undefined)
       throw new AppError("All fields are required", 400);
