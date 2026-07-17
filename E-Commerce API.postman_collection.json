@@ -635,7 +635,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"name\": \"Yellow Pants\",\r\n    \"description\": \"Yellow pants suitable for girls between 8-10 years old\",\r\n    \"price\": 340,\r\n    \"stock\": 45,\r\n    \"category\": \"6a573f2a7aa841ed0d843c28\"   \r\n}",
+              "raw": "{\r\n    \"name\": \"Test\",\r\n    \"description\": \"Test\",\r\n    \"price\": 100,\r\n    \"stock\": 5,\r\n    \"category\": {\r\n        \"$ne\": null\r\n    }\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1760,6 +1760,87 @@
               ],
               "cookie": [],
               "body": "{\n    \"status\": 200,\n    \"message\": \"Order Fetched Successfully\",\n    \"data\": {\n        \"shippingAddress\": {\n            \"street\": \"132 to North Greenwich\",\n            \"city\": \"London\",\n            \"country\": \"England, UK\"\n        },\n        \"paymentMethod\": \"CASH\",\n        \"_id\": \"6a5965ef3885cf825de9cfdb\",\n        \"orderNumber\": \"ORD-1784243695004\",\n        \"items\": [\n            {\n                \"name\": \"Teal Blazer\",\n                \"product\": \"6a573f2a7aa841ed0d843c2d\",\n                \"quantity\": 6,\n                \"price\": 310,\n                \"_id\": \"6a5965ef3885cf825de9cfdc\"\n            }\n        ],\n        \"totalPrice\": 1860,\n        \"status\": \"confirmed\",\n        \"createdAt\": \"2026-07-16T23:14:55.017Z\",\n        \"updatedAt\": \"2026-07-17T08:47:26.316Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Order Status",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Update Order Status",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"status\": \"shipped\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/orders/:id/status",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "orders",
+                    ":id",
+                    "status"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "ORD-1784243695004"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "504"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1f8-8cgMev9Hvcgu9KdBGK+jckSism0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 22:10:25 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Order Status Updated Successfully\",\n    \"data\": {\n        \"shippingAddress\": {\n            \"street\": \"132 to North Greenwich\",\n            \"city\": \"London\",\n            \"country\": \"England, UK\"\n        },\n        \"paymentMethod\": \"CASH\",\n        \"_id\": \"6a5965ef3885cf825de9cfdb\",\n        \"orderNumber\": \"ORD-1784243695004\",\n        \"items\": [\n            {\n                \"name\": \"Teal Blazer\",\n                \"product\": \"6a573f2a7aa841ed0d843c2d\",\n                \"quantity\": 6,\n                \"price\": 310,\n                \"_id\": \"6a5965ef3885cf825de9cfdc\"\n            }\n        ],\n        \"totalPrice\": 1860,\n        \"status\": \"shipped\",\n        \"createdAt\": \"2026-07-16T23:14:55.017Z\",\n        \"updatedAt\": \"2026-07-17T22:10:25.382Z\",\n        \"__v\": 0\n    }\n}"
             }
           ]
         }

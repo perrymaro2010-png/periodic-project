@@ -7,9 +7,8 @@ https://github.com/perrymaro2010-png/periodic-project
 ## Prerequisites
 
 - Node.js
-- Express.js
 - MongoDB
-- Mongoose
+- npm
 
 ## Features
 
@@ -78,45 +77,47 @@ npm run dev
 ## API Endpoints
 **Category API**
 
-| Method |                   URL                   |     Description    |
-|--------|-----------------------------------------|--------------------|
-| GET    |http://localhost:5000/api/categories     | Get categories     |
-| GET    |http://localhost:5000/api/categories/:id | Get Category by ID |
-| POST   |http://localhost:5000/api/categories     | Create Category    |
-| PUT    |http://localhost:5000/api/categories/:id | Update Category    |
-| DELETE |http://localhost:5000/api/categories/:id | Delete Category    |
+| Method |         URL         |     Description    |
+|--------|---------------------|--------------------|
+| GET    | /api/categories     | Get categories     |
+| GET    | /api/categories/:id | Get Category by ID |
+| POST   | /api/categories     | Create Category    |
+| PUT    | /api/categories/:id | Update Category    |
+| DELETE | /api/categories/:id | Delete Category    |
 
 
 **Products API**
-| Method |                   URL                   |       Description      |
-|--------|-----------------------------------------|------------------------|
-| GET    |http://localhost:5000/api/products       | Get Products           |
-| GET    |http://localhost:5000/api/products/:id   | Get Product by ID      |
-| POST   |http://localhost:5000/api/products       | Create Product         |
-| PUT    |http://localhost:5000/api/products/:id   | Update Product         |
-| PATCH  |http://localhost:5000/api/products/:id   | Update Product         |
-| DELETE |http://localhost:5000/api/products/:id   | Soft-Delete Product    |
+| Method |         URL         |       Description      |
+|--------|---------------------|------------------------|
+| GET    | /api/products       | Get Products           |
+| GET    | /api/products/:id   | Get Product by ID      |
+| POST   | /api/products       | Create Product         |
+| PUT    | /api/products/:id   | Update Product         |
+| PATCH  | /api/products/:id   | Update Product         |
+| DELETE | /api/products/:id   | Soft-Delete Product    |
 
 
 **Cart API**
 
-| Method |                   URL                     |        Description       |
-|--------|-------------------------------------------|--------------------------|
-| GET    |http://localhost:5000/api/cart             | Get Cart                 |
-| POST   |http://localhost:5000/api/cart/items       | Add Product to Cart      |
-| PATCH  |http://localhost:5000/api/cart/items/:id   | Update Product Quantity  |
-| DELETE |http://localhost:5000/api/cart/items/:id   | Remove Product from Cart |
-| DELETE |http://localhost:5000/api/cart/items       | Clear Cart               |
+| Method |         URL           |        Description       |
+|--------|-----------------------|--------------------------|
+| GET    | /api/cart             | Get Cart                 |
+| POST   | /api/cart/items       | Add Product to Cart      |
+| PATCH  | /api/cart/items/:id   | Update Product Quantity  |
+| DELETE | /api/cart/items/:id   | Remove Product from Cart |
+| DELETE | /api/cart/items       | Clear Cart               |
 
 
 **Order API**
-| Method |                 URL                 |      Description     |
-|--------|-------------------------------------|----------------------|
-| GET    |http://localhost:5000/api/orders     | Get All Orders       |
-| GET    |http://localhost:5000/api/orders/:id | Get Order by orderID |
-| POST   |http://localhost:5000/api/orders     | Create Order         |
+| Method |           URL          |      Description     |
+|--------|------------------------|----------------------|
+| GET    | /api/orders            | Get All Orders       |
+| GET    | /api/orders/:id        | Get Order by orderID |
+| POST   | /api/orders            | Create Order         |
+| PATCH  | /api/orders/:id/status | Update Order Status  |
 
 ## Project Folder Tree
+```text
 periodic-project/
 |
 ├──controllers/
@@ -134,12 +135,16 @@ periodic-project/
 ├──README.md
 ├──README.txt
 ├──seed.js
-
+```
 
 ## Use of every folder
-**controllers/** - has all the API logic stored
+**controllers/** - has all the API logic concerning requests stored
 **db/** - has the function that connects main.js to MongoDB
-**middleware/** - includes errorHandler
-**models/** - includes all the schemas for all the models
-**routes/** - has all the possible routes for all APIs
-**utils/** - includes functions used for error-handling and functions that are needed throughout many files
+**middleware/** - includes custom middleware such as errorHandler
+**models/** - defines mongoose schemas and models
+**routes/** - has all the possible routes and API endpoints
+**utils/** - includes functions used for error-handling and are reusable
+
+## Author
+**Priscilla Samuel**
+This project was developed as part of a backend development course to demonstrate RESTful API development using Node.js, Express.js, MongoDB, and Mongoose.
