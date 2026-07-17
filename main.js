@@ -13,8 +13,8 @@ const orderRoutes = require('./routes/order');
 const errorHandler = require('./middleware/errorHandler');
 
 app.use(cors());
-//app.use(mongoSanitize());
 app.use(express.json()); 
+//app.use(mongoSanitize());
 
 app.use('/api/products', productRoutes);
 app.use('/api/categories', categoryRoutes);
