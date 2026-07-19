@@ -1,5 +1,4 @@
-require('dotenv').config();
-
+const config = require('./config/config');
 const express = require('express');
 const app = express();
 //const mongoSanitize = require('express-mongo-sanitize');
@@ -30,8 +29,8 @@ app.use(errorHandler);
 const start = async ()=> {
     try {
         await connectDB();
-        app.listen(process.env.PORT, () => {
-            console.log(`Server running on port ${process.env.PORT}`);
+        app.listen(config.port, () => {
+            console.log(`Server running on port ${config.port}`);
         });
     } catch (err) {
         console.error(err);

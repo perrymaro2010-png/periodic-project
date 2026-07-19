@@ -120,6 +120,7 @@ npm run dev
 ```text
 periodic-project/
 |
+├──config/
 ├──controllers/
 ├──db/
 ├──middleware/
@@ -138,6 +139,7 @@ periodic-project/
 ```
 
 ## Use of every folder
+**config/** - includes looking through .env from one file
 **controllers/** - has all the API logic concerning requests stored
 **db/** - has the function that connects main.js to MongoDB
 **middleware/** - includes custom middleware such as errorHandler

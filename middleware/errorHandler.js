@@ -1,3 +1,4 @@
+const config = require('../config/config');
 const AppError = require("../utils/AppError");
 
 const errorHandler = (err, req, res, next) => {
@@ -33,7 +34,7 @@ const errorHandler = (err, req, res, next) => {
     data: null,
   };
 
-  if (process.env.NODE_ENV === "development") {
+  if (config.isDev) {
     body.stack = err.stack;
   }
 
