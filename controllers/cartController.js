@@ -142,7 +142,7 @@ const clearCart = asyncHandler(async (req, res) => {
   //check for userID and cart
   const userID = req.body.id;
   let cart = await Cart.findOne({ user: userID });
-  if (!cart) {
+  if (!cart || cart.items.length === 0) {
     throw new AppError("Nothing to Clear", 404);
   }
   //clear items and total Price

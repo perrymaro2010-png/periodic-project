@@ -8,12 +8,18 @@ const {
     getProduct,
     replaceProduct
 } = require('../controllers/productController');
+const {
+    validateProduct,
+    validateToUpdate,
+    validateID,
+    validator
+} = require('../middleware/validators/productValidator');
 
 router.get('/', getAllProducts);
-router.get('/:id', getProduct);
-router.post('/', createProduct);
-router.patch('/:id', updateProduct);
-router.put('/:id', replaceProduct);
-router.delete('/:id', deleteProduct);
+router.get('/:id', validateID, validator, getProduct);
+router.post('/', validateProduct, validator, createProduct);
+router.patch('/:id', validateID, validateToUpdate, validator, updateProduct);
+router.put('/:id', validateID, validateProduct, validator, replaceProduct);
+router.delete('/:id', validateID, validator, deleteProduct);
 
 module.exports = router;

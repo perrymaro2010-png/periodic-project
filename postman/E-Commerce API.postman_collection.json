@@ -265,6 +265,97 @@
           ]
         },
         {
+          "name": "Create Category (error)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"babies\", \r\n    \"description\": \"Clothing for baby boys and girls\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/categories",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "categories"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Category (error)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"babies\", \r\n    \"description\": \"Clothing for baby boys and girls\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/categories",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "categories"
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "298"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"12a-iTMNRbyY2mkTtTGD6ofWvpkfTrs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 19 Jul 2026 20:15:53 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"fail\",\n    \"statusCode\": 409,\n    \"message\": \"Category Already Exists\",\n    \"data\": null,\n    \"stack\": \"Error: Category Already Exists\\n    at C:\\\\Users\\\\HP\\\\Desktop\\\\Periodic Project\\\\controllers\\\\categoryController.js:14:31\\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\"\n}"
+            }
+          ]
+        },
+        {
           "name": "Update Category",
           "request": {
             "method": "PUT",
@@ -629,13 +720,102 @@
           ]
         },
         {
+          "name": "Get Products By ID (error)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/products/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "products",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "123",
+                  "description": "i.e. \"orange shorts\" product\n"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Products By ID (error)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/products/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "123",
+                      "description": "i.e. \"orange shorts\" product\n"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "680"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2a8-PDda2PmCioNwn+uoT9ONaN8A754\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 19 Jul 2026 19:43:22 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"fail\",\n    \"statusCode\": 400,\n    \"message\": \"Invalid Object ID\",\n    \"data\": null,\n    \"stack\": \"Error: Invalid Object ID\\n    at validator (C:\\\\Users\\\\HP\\\\Desktop\\\\Periodic Project\\\\middleware\\\\validators\\\\productValidator.js:83:21)\\n    at Layer.handle [as handle_request] (C:\\\\Users\\\\HP\\\\Desktop\\\\Periodic Project\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\\n    at next (C:\\\\Users\\\\HP\\\\Desktop\\\\Periodic Project\\\\node_modules\\\\express\\\\lib\\\\router\\\\route.js:149:13)\\n    at middleware (C:\\\\Users\\\\HP\\\\Desktop\\\\Periodic Project\\\\node_modules\\\\express-validator\\\\lib\\\\middlewares\\\\check.js:16:13)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\"\n}"
+            }
+          ]
+        },
+        {
           "name": "Create Product",
           "request": {
             "method": "POST",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"name\": \"Test\",\r\n    \"description\": \"Test\",\r\n    \"price\": 100,\r\n    \"stock\": 5,\r\n    \"category\": {\r\n        \"$ne\": null\r\n    }\r\n}",
+              "raw": "{\r\n    \"name\": \"Yellow Pants\",\r\n    \"description\": \"Yellow pants suitable for girls between 8-10 years old\",\r\n    \"price\": 340,\r\n    \"stock\": 45,\r\n    \"category\": \"6a573f2a7aa841ed0d843c28\"   \r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -716,6 +896,97 @@
               ],
               "cookie": [],
               "body": "{\n    \"status\": 201,\n    \"message\": \"Product created successfully.\",\n    \"data\": {\n        \"name\": \"Yellow Pants\",\n        \"description\": \"Yellow pants suitable for girls between 8-10 years old\",\n        \"price\": 340,\n        \"stock\": 45,\n        \"category\": \"6a573f2a7aa841ed0d843c28\",\n        \"isDeleted\": false,\n        \"images\": [],\n        \"_id\": \"6a5a23da53acbce4029da77a\",\n        \"createdAt\": \"2026-07-17T12:45:14.703Z\",\n        \"updatedAt\": \"2026-07-17T12:45:14.703Z\",\n        \"__v\": 0,\n        \"inStock\": true,\n        \"id\": \"6a5a23da53acbce4029da77a\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Product (error)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"Yellow pants suitable for girls between 8-10 years old\",\r\n    \"price\": 340,\r\n    \"stock\": 45,\r\n    \"category\": \"6a573f2a7aa841ed0d843c28\"   \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/products",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Product (error)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"description\": \"Yellow pants suitable for girls between 8-10 years old\",\r\n    \"price\": 340,\r\n    \"stock\": 45,\r\n    \"category\": \"6a573f2a7aa841ed0d843c28\"   \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/products",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "696"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2b8-OtGu0sm/WhYXZHvzqrYWdVRYcuU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 19 Jul 2026 19:38:53 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"fail\",\n    \"statusCode\": 400,\n    \"message\": \"Name is a required field.\",\n    \"data\": null,\n    \"stack\": \"Error: Name is a required field.\\n    at validator (C:\\\\Users\\\\HP\\\\Desktop\\\\Periodic Project\\\\middleware\\\\validators\\\\productValidator.js:83:21)\\n    at Layer.handle [as handle_request] (C:\\\\Users\\\\HP\\\\Desktop\\\\Periodic Project\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\\n    at next (C:\\\\Users\\\\HP\\\\Desktop\\\\Periodic Project\\\\node_modules\\\\express\\\\lib\\\\router\\\\route.js:149:13)\\n    at middleware (C:\\\\Users\\\\HP\\\\Desktop\\\\Periodic Project\\\\node_modules\\\\express-validator\\\\lib\\\\middlewares\\\\check.js:16:13)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\"\n}"
             }
           ]
         },
@@ -1020,7 +1291,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"id\":\"6880f4b9c1d2e3f456789abc\"\r\n}",
+              "raw": "{\r\n    \"id\":\"6a57d73fe3aca40944253c25\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1194,6 +1465,71 @@
               ],
               "cookie": [],
               "body": "{\n    \"status\": 200,\n    \"message\": \"Product Added Successfully\",\n    \"data\": {\n        \"_id\": \"6a5a2adb53acbce4029da77b\",\n        \"user\": \"6880f4b9c1d2e3f456789abc\",\n        \"items\": [\n            {\n                \"product\": \"6a573f2a7aa841ed0d843c2f\",\n                \"quantity\": 1,\n                \"price\": 315,\n                \"_id\": \"6a5a2b0353acbce4029da77c\"\n            }\n        ],\n        \"totalPrice\": 315,\n        \"createdAt\": \"2026-07-17T13:15:07.448Z\",\n        \"updatedAt\": \"2026-07-17T13:15:47.826Z\",\n        \"__v\": 1\n    }\n}"
+            },
+            {
+              "name": "Add Product to Cart (error)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":\"6880f4b9c1d2e3f456789abc\",\r\n    \"product\":\"6a573f2a7aa841ed0d843c30\",\r\n    \"quantity\": 5\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/cart/items",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "cart",
+                    "items"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "298"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"12a-nyjFX4lQHsTPTHf+wTXnfwIwwKg\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 19 Jul 2026 21:26:08 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"fail\",\n    \"statusCode\": 400,\n    \"message\": \"Not Enough Items in Stock\",\n    \"data\": null,\n    \"stack\": \"Error: Not Enough Items in Stock\\n    at C:\\\\Users\\\\HP\\\\Desktop\\\\Periodic Project\\\\controllers\\\\cartController.js:33:13\\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\"\n}"
             }
           ]
         },
@@ -1225,6 +1561,113 @@
                 {
                   "key": "id",
                   "value": "6a573f2a7aa841ed0d843c2f"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Cart Item Quantity",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":\"6880f4b9c1d2e3f456789abc\",\r\n    \"product\":\"6a573f2a7aa841ed0d843c2f\",\r\n    \"quantity\": 2\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/cart/items/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "cart",
+                    "items",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "6a573f2a7aa841ed0d843c2f"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "350"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"15e-Xu+K7Hb+eUQHQrfnl+mB/kUAL80\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 17 Jul 2026 13:18:58 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"message\": \"Product Quantity Updated Successfully\",\n    \"data\": {\n        \"_id\": \"6a5a2adb53acbce4029da77b\",\n        \"user\": \"6880f4b9c1d2e3f456789abc\",\n        \"items\": [\n            {\n                \"product\": \"6a573f2a7aa841ed0d843c2f\",\n                \"quantity\": 3,\n                \"price\": 315,\n                \"_id\": \"6a5a2b0353acbce4029da77c\"\n            }\n        ],\n        \"totalPrice\": 945,\n        \"createdAt\": \"2026-07-17T13:15:07.448Z\",\n        \"updatedAt\": \"2026-07-17T13:18:58.278Z\",\n        \"__v\": 1\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Cart Item Quantity (error)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\":\"6880f4b9c1d2e3f456789abc\",\r\n    \"product\":\"6a573f2a7aa841ed0d843c2f\",\r\n    \"quantity\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/cart/items/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "cart",
+                "items",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6880f4b9c1d2e3f456789abc"
                 }
               ]
             }
@@ -1501,6 +1944,71 @@
               ],
               "cookie": [],
               "body": "{\n    \"status\": 200,\n    \"message\": \"Cart Cleared Successfully\",\n    \"data\": {\n        \"_id\": \"6a5a2adb53acbce4029da77b\",\n        \"user\": \"6880f4b9c1d2e3f456789abc\",\n        \"items\": [],\n        \"totalPrice\": 0,\n        \"createdAt\": \"2026-07-17T13:15:07.448Z\",\n        \"updatedAt\": \"2026-07-17T15:29:19.125Z\",\n        \"__v\": 5\n    }\n}"
+            },
+            {
+              "name": "Clear Cart (error)",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":\"6880f4b9c1d2e3f456789abc\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/cart/items",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "cart",
+                    "items"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "281"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"119-UGtscVXtUYwlbU/Bqfj3leI61DI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 19 Jul 2026 22:14:41 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"fail\",\n    \"statusCode\": 404,\n    \"message\": \"Nothing to Clear\",\n    \"data\": null,\n    \"stack\": \"Error: Nothing to Clear\\n    at C:\\\\Users\\\\HP\\\\Desktop\\\\Periodic Project\\\\controllers\\\\cartController.js:146:11\\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\"\n}"
             }
           ]
         }
@@ -1766,8 +2274,34 @@
         {
           "name": "Update Order Status",
           "request": {
-            "method": "GET",
-            "header": []
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\": \"shipped\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/orders/:id/status",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "orders",
+                ":id",
+                "status"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "ORD-1784243695004"
+                }
+              ]
+            }
           },
           "response": [
             {

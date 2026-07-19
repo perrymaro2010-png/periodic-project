@@ -25,7 +25,7 @@ const productSchema = new mongoose.Schema(
     category: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Category",
-      required: true,
+      required: [true, "Category is a required field"],
     },
     isDeleted: {
       type: Boolean,

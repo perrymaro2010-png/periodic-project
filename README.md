@@ -68,10 +68,11 @@ npm run dev
 ```
 
 ## Environment Variables
-| Variable  | Description                     |
-| --------- | ------------------------------- |
-| PORT      | Port used by the Express server |
-| MONGO_URI | MongoDB connection string       |
+| Variable  |               Example                      |           Description           |
+| --------- |--------------------------------------------|-------------------------------- |
+| PORT      | 5000                                       | Port used by the Express server |
+| NODE_ENV  | development                                | Running Environment             |
+| MONGO_URI | mongodb://127.0.0.1:27017/periodic_project | MongoDB connection string       |
 
 
 ## API Endpoints
@@ -125,6 +126,7 @@ periodic-project/
 ├──db/
 ├──middleware/
 ├──models/
+├──postman/
 ├──routes/
 ├──utils/
 ├──.env.example
@@ -144,6 +146,7 @@ periodic-project/
 **db/** - has the function that connects main.js to MongoDB
 **middleware/** - includes custom middleware such as errorHandler
 **models/** - defines mongoose schemas and models
+**postman/** - includes all the testing of all APIs, exported in JSON 
 **routes/** - has all the possible routes and API endpoints
 **utils/** - includes functions used for error-handling and are reusable
 

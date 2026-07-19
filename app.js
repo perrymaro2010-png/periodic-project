@@ -1,7 +1,7 @@
 const config = require('./config/config');
 const express = require('express');
 const app = express();
-//const mongoSanitize = require('express-mongo-sanitize');
+const mongoSanitize = require('express-mongo-sanitize');
 const cors = require('cors');
 const connectDB = require('./db/connect');
 
@@ -13,7 +13,7 @@ const errorHandler = require('./middleware/errorHandler');
 
 app.use(cors());
 app.use(express.json()); 
-//app.use(mongoSanitize());
+app.use(mongoSanitize());
 
 app.use('/api/products', productRoutes);
 app.use('/api/categories', categoryRoutes);
