@@ -9,7 +9,7 @@ if(missing.length > 0){
 }
 
 module.exports = {
-    port = parseInt(process.env.PORT) || 3000,
-    mongoURI = process.env.MONGO_URI,
-    isDev = process.env.NODE_ENV === "development"
+    port: process.env.PORT || 3000,
+    mongoURI: process.env.MONGO_URI,
+    isDev: process.env.NODE_ENV === "development"
 };
