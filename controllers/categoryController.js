@@ -21,7 +21,7 @@ const createCategory = asyncHandler(async (req, res) => {
   ok(res, category, "Category created successfully.", 201);
 });
 
-//PATCH/PUT - update category details
+//PATCH - update category details
 const updateCategory = asyncHandler(async (req, res) => {
   //get category id
   const id = req.params.id;
@@ -32,6 +32,25 @@ const updateCategory = asyncHandler(async (req, res) => {
     .toLowerCase()
     .replace(/\s+/g, "-")
   }
+  //push update + error-handling its absence
+  const category = await Category.findByIdAndUpdate(id, req.body, {
+    new: true,
+    runValidators: true,
+  });
+  if (!category) throw new AppError("Category Not Found", 404);
+  // 200 OK Response
+  ok(res, category, "Category Updated Successfully");
+});
+
+//PUT - update all category details
+const replaceCategory = asyncHandler(async (req, res) => {
+  //get category id
+  const id = req.params.id;
+  // update slug with new category name
+  req.body.slug = req.body.name
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-")
   //push update + error-handling its absence
   const category = await Category.findByIdAndUpdate(id, req.body, {
     new: true,
@@ -75,6 +94,7 @@ const getCategory = asyncHandler(async (req, res) => {
 module.exports = {
   createCategory,
   updateCategory,
+  replaceCategory,
   deleteCategory,
   getAllCategories,
   getCategory,
