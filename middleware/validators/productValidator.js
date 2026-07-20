@@ -5,15 +5,16 @@ const validateProduct = [
     body('name')
     .notEmpty()
     .withMessage('Name is a required field.')
-    .trim()
     .isString()
+    .trim()
     .withMessage('Name must be a string.'),
 
     body('description')
     .notEmpty()
     .withMessage('Description is a required field.')
-    .trim()
     .isString()
+    .withMessage('Must be a string')
+    .trim()
     .isLength({min: 5})
     .withMessage('Must be a string with a length more than at least 5 characters.'),
 
@@ -40,15 +41,15 @@ const validateProduct = [
 const validateToUpdate = [
     body('name')
     .optional()
-    .trim()
     .isString()
-    .withMessage('Name must be a string'),
+    .withMessage('Name must be a string')
+    .trim(),
 
     body('description')
     .optional()
-    .trim()
     .isString()
     .withMessage('Must be a string')
+    .trim()
     .isLength({min: 5})
     .withMessage('Must be a string with at least 5 characters.'),
 
