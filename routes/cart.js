@@ -8,10 +8,17 @@ const {
   clearCart,
 } = require("../controllers/cartController");
 
+const {
+  validateAddedProduct,
+  validateToUpdateQuantity,
+  validateID,
+  validator
+} = require('../middleware/validators/cartValidator');
+
 router.get("/", getCart);
-router.post("/items", addProduct);
-router.delete("/items/:productID", removeProductEntirely);
-router.patch("/items/:productID", updateProductQuantity);
+router.post("/items", validateAddedProduct, validator, addProduct);
+router.delete("/items/:productID", validateID, validator, removeProductEntirely);
+router.patch("/items/:productID", validateID, validateToUpdateQuantity, validator, updateProductQuantity);
 router.delete("/items", clearCart);
 
 module.exports = router;
