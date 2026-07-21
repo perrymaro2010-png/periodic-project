@@ -36,9 +36,9 @@ const orderSchema = new mongoose.Schema({
         default: 'pending'
     },
     shippingAddress:{
-        street:{type: String, required:true},
+        street:{type: String, required:[true, "Street is a required field"]},
         city:{type: String},
-        country:{type: String, required: true}
+        country:{type: String, required: [true, "Country is a required field"]}
     },
     paymentMethod:{
         type:String,
