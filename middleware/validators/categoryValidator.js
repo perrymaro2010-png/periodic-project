@@ -23,8 +23,8 @@ const validateToUpdate = [
     body('name')
     .optional()
     .isString()
-    .trim()
-    .withMessage('Name must be a string'),
+    .withMessage('Name must be a string')
+    .trim(),
 
     body('description')
     .optional()
@@ -38,6 +38,8 @@ const validateToUpdate = [
 
 const validateID = [
     param('id')
+    .notEmpty()
+    .withMessage('Id is required')
     .isMongoId()
     .withMessage('Invalid Object ID')
 ];

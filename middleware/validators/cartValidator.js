@@ -3,14 +3,20 @@ const AppError = require('../../utils/AppError');
 
 const validateAddedProduct = [
     body('id')
+    .notEmpty()
+    .withMessage('Id is required')
     .isMongoId()
     .withMessage('Invalid Object ID'),
 
     body('product')
+    .notEmpty()
+    .withMessage('Product Id is required')
     .isMongoId()
     .withMessage('Invalid Object ID'),
 
     body('quantity')
+    .notEmpty()
+    .withMessage('Quantity is required')
     .isInt({min: 1})
     .withMessage('Quantity must be a number more than 1')
 
@@ -28,6 +34,8 @@ const validateToUpdateQuantity = [
 
 const validateID = [
     param('productID')
+    .notEmpty()
+    .withMessage('')
     .isMongoId()
     .withMessage('Invalid Object ID')
 ]

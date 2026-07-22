@@ -32,6 +32,8 @@ const validateProduct = [
     .withMessage('Stock value must be at least 0'),
 
     body('category')
+    .notEmpty()
+    .withMessage('Category is required')
     .isMongoId()
     .withMessage('Invalid ObjectID for category'),
 

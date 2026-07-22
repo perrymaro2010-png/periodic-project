@@ -3,6 +3,8 @@ const AppError = require('../../utils/AppError');
 
 const validateOrder = [
     body('shippingAddress')
+    .notEmpty()
+    .withMessage('Shipping Address is required')
     .isObject()
     .withMessage('Address must be an object'),
 
@@ -35,12 +37,16 @@ const validateToUpdateStatus = [
 
 const validateOrderID = [
     param('id')
+    .notEmpty()
+    .withMessage('Id is required')
     .isString()
     .withMessage('Invalid OrderID')
 ]
 
 const validateUserID = [
     body('id')
+    .notEmpty()
+    .withMessage('Id is required')
     .isMongoId()
     .withMessage('Invalid Object ID')
 ];
