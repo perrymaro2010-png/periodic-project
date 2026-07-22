@@ -33,7 +33,7 @@ const validateProduct = [
 
     body('category')
     .isMongoId()
-    .withMessage('Invalid ObjectID'),
+    .withMessage('Invalid ObjectID for category'),
 
 ];
 
