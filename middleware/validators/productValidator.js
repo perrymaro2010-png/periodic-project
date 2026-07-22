@@ -21,10 +21,9 @@ const validateProduct = [
     body('price')
     .notEmpty()
     .withMessage('Price is a required field.')
-    .toFloat()
-    .withMessage('Price must be a float')
     .isFloat({min: 90})
-    .withMessage('Price must exceed 90EGP'),
+    .withMessage('Price must be a float more than 90EGP')
+    .toFloat(),
 
     body('stock')
     .notEmpty()
@@ -55,9 +54,9 @@ const validateToUpdate = [
 
     body('price')
     .optional()
-    .toFloat()
     .isFloat({min: 90})
-    .withMessage('Product Price must exceed 90EGP'),
+    .withMessage('Product Price must exceed 90EGP')
+    .toFloat(),
 
     body('stock')
     .optional()
