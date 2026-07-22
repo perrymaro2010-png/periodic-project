@@ -48,9 +48,9 @@ const validateToUpdate = [
     .optional()
     .isString()
     .withMessage('Must be a string')
-    .trim()
     .isLength({min: 5})
-    .withMessage('Must be a string with at least 5 characters.'),
+    .withMessage('Must be a string with at least 5 characters.')
+    .trim(),
 
     body('price')
     .optional()
