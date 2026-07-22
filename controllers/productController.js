@@ -94,7 +94,7 @@ const getAllProducts = asyncHandler(async (req, res) => {
     ];
   }
   // fetch product with selected details of category
-  const products = await Product.find(filter).populate("category", "name");
+  const products = await Product.find({isDeleted: true, filter}).populate("category", "name");
   if (!products.length)
     //check for empty array
     throw new AppError("No Products Are Available Yet", 404);
