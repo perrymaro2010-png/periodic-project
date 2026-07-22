@@ -23,6 +23,18 @@ const validateAddedProduct = [
 ];
 
 const validateToUpdateQuantity = [
+    body('id')
+    .notEmpty()
+    .withMessage('Id is required')
+    .isMongoId()
+    .withMessage('Invalid user ID'),
+
+    body('product')
+    .notEmpty()
+    .withMessage('Product is required')
+    .isMongoId()
+    .withMessage('Invalid product ID'),
+
     body('quantity')
     .notEmpty()
     .withMessage('Quantity is a required field')

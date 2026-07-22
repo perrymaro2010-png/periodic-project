@@ -74,7 +74,7 @@ const getCart = asyncHandler(async (req, res) => {
 const removeProductEntirely = asyncHandler(async (req, res) => {
   //get userID and product + fetch cart/error-handle absence
   const userID = req.body.id;
-  const product = req.body.product;
+  const product = req.params.productID;
   let cart = await Cart.findOne({ user: userID });
   if (!cart) {
     throw new AppError("Nothing to Remove", 404);
