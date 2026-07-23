@@ -23,8 +23,13 @@ const validateOrder = [
     .notEmpty()
     .withMessage('Country is required')
     .isString()
-    .withMessage('Country must be a string')
+    .withMessage('Country must be a string'),
 
+    body('paymentMethod')
+    .notEmpty()
+    .withMessage('Payment Method is required')
+    .isString()
+    .withMessage('Payment Method Details must be in a string')
 ];
 
 const validateToUpdateStatus = [
